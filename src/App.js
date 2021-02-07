@@ -1,24 +1,82 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import About from './Components/About';
+import Contact from './Components/Contact';
+import Home from './Components/Home';
+import Projects from './Components/Projects';
+import Burger from './Components/Burger';
+import Menu from './Components/Menu';
+
+import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import { createGlobalStyle } from 'styled-components';
+import styled from 'styled-components';
+
+// Themeprovider is a wrapping compunent, uses the Context API to make our theme varibles available to the whole component tree
+import { ThemeProvider } from 'styled-components';
+import { theme } from './Styles/theme';
+
+
+
+
+const GlobalStyle = createGlobalStyle`
+* {
+      margin: 0;
+      font-family: Plain,Helvetica Neue,Arial,Noto Sans,sans-serif;
+      /* background-color:black; */
+
+}
+  *, *::after, *::before {
+    box-sizing: border-box;
+  }
+  body {
+    /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; */
+    height: 100vh;
+
+  }
+`
+
+const useOnClickOutside = (ref, handler) => {
+  useEffect(() => {
+    const listener = event => {
+      if (!ref.current || ref.current.contains(event.target)){
+        return;
+      }
+      handler(event);
+    };
+    document.addEventListener('mousedown',listener);
+    return() => {
+      document.removeEventListener('mousedown', listener);
+    };
+  },
+  [ref,handler],
+  );
+};
+
 
 function App() {
+  const [open, setOpen] = useState(false);
+  const node = useRef();
+  const [name, setName] = useState();
+  useOnClickOutside(node, () => setOpen(false));
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <Router>
+        <div>
+          <div ref={node}>
+          <Burger open={open} setOpen={setOpen}/>
+          <Menu open={open} setOpen={setOpen}/>
+          </div>
+        <Switch>
+          <Route path='/about'> <About /> </Route>
+          <Route path='/projects'> <Projects /> </Route>
+          <Route path='/contact'> <Contact name={name} setName={setName} /> </Route>
+          <Route path='/'> <Home /> </Route>
+        </Switch>
+        </div>
+      </Router>
+    </ThemeProvider >
   );
 }
 
