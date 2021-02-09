@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import About from './Components/About';
 import Contact from './Components/Contact';
 import Home from './Components/Home';
@@ -20,8 +20,8 @@ import { theme } from './Styles/theme';
 const GlobalStyle = createGlobalStyle`
 * {
       margin: 0;
-      font-family: Plain,Helvetica Neue,Arial,Noto Sans,sans-serif;
-      /* background-color:black; */
+      font-family: 'Roboto', sans-serif;
+      background-color:black;
 
 }
   *, *::after, *::before {

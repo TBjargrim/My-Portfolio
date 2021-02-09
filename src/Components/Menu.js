@@ -8,8 +8,8 @@ background-color:white;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 100vh;
-  width:30%;
+  height: 100%;
+  min-width:20%;
   text-align: left;
   padding: 2rem;
   position: absolute;
@@ -28,9 +28,10 @@ ul {
 }
 li{
   background-color:white;
+  list-style:none;
 }
   a {
-    font-size: 40px;
+    font-size: 15px;
     text-transform: uppercase;
     padding: 2rem 0;
     font-weight: 800;
@@ -39,7 +40,7 @@ li{
     text-decoration: none;
     transition: color 0.3s linear;
     line-height:100px;
-background-color:white;
+  background-color:white;
     
     @media (max-width: ${({ theme }) => theme.mobile}) {
       font-size: 1rem;
@@ -49,14 +50,13 @@ background-color:white;
     &:hover {
       color: #96c5b0;
       font-family: 'Monoton';
-      font-size:50px;
       letter-spacing: 0.7rem;
     }
   }
 `;
-const Menu = ({open}) => {
+const Menu = ({open, setOpen}) => {
     return (
-          <StyledMenu open={open}>
+      <StyledMenu open={open} onClick={() => setOpen(!open)} open={open} setOpen={setOpen}  >
             <ul>
                 <li>
                     <Link to='/'>Home</Link>

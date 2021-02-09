@@ -1,6 +1,5 @@
 import styled from 'styled-components';
-import { ContainerDiv, BubblesDiv, BorderDiv} from '../Styles/Background';
-
+import me from './Images/me.png'
 // ${ ({ Background }) => Background.mobile }
 
 
@@ -8,41 +7,59 @@ const StyledDiv = styled.div`
     background-color:black;
     height: 100vh;
     width:100%;
-
-    h3 {
-    position:absolute;
-    width:100%;
-    top:10%;
-    left:10%;
+    
+h2{
+    font-family: 'Roboto', sans-serif;
     color:white;
-    border-top:1px solid white;
-    padding-top:10px;
+    position:absolute;
+    top:15%;
+    left:18%;
+    font-size:130px;
+    margin-bottom:40px;
+    letter-spacing:4px;
     text-transform:uppercase;
-    letter-spacing:1px;
-    z-index:1;
+    z-index:2;
+    background-color:rgba(0, 0, 0, 0.5);
+    
+    @media (max-width: ${({ theme }) => theme.mobile}) {
+    left:5%;
+  }
+  @media (max-width: ${({ theme }) => theme.smallScreen}) {
+      font-size:80px;
+      
+  }
 }
 `
 const StyledSection = styled.section`
     position:absolute;
     letter-spacing: 1px;
     color:white;
-    left:10%;
-    top:35%;
+    left:18%;
+    top:40%;
     max-width:600px;
-    line-height:70px;
+    line-height:50px;
     z-index:1;
+    background-color:rgba(0, 0, 0, 0.5);
 h4{
     font-size:48px;
-    text-transform:uppercase;
     letter-spacing:6px;
+    font-family: 'Roboto', sans-serif;
     margin-bottom:20px;
+    background-color:rgba(0, 0, 0, 0.5);
 }
 h5 {
-    font-size:32px;
-    text-transform:lowercase;
+    font-size:22px;
     letter-spacing:5px;
     margin-top:60px;
+    margin-bottom:20px;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1px;
+    font-weight:200;
+    background-color:rgba(0, 0, 0, 0.5);
 }
+    @media (max-width: ${({ theme }) => theme.mobile}) {
+    left:5%;
+  }
 `
 const DivOne = styled.div `
 position:absolute;
@@ -59,42 +76,45 @@ position:absolute;
     border-radius:20px;
     left:25%;
     `
+const ImageContainer =styled.div`
+position:absolute;
+top:30%;
+right:10%;
+height:1000px;
+width:600px;
+img {
+    width:100%;
+    height:auto;
+}
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    height:800px;
+    width:450px;
+    right:1%;
+    top:20%;
+  }
+  @media (max-width: ${({ theme }) => theme.smallScreen}){
+      display:none;
+
+  }
+`
 
 
 function About() {
 
     return (
         <StyledDiv>
-            <h3>about</h3>
+            <h2>About</h2>
             <StyledSection>
                 <h4>Front End</h4>
+                {/* <h5> HTML / CSS / JAVASCRIPT / REACT </h5> */}
                 <DivOne></DivOne>
                 <DivTwo></DivTwo>
-                <h5> HTML / CSS / JAVASCRIPT / REACT </h5>
+                <h5>I´m currently studing Front-End Development at KYH in Stockholm,
+            and my goal is to work with a variety of clients and on many diverse projects.</h5>
             </StyledSection>
-
-            <ContainerDiv>
-                <BubblesDiv></BubblesDiv>
-                <BubblesDiv></BubblesDiv>
-                <BubblesDiv></BubblesDiv>
-                <BubblesDiv></BubblesDiv>
-                <BubblesDiv></BubblesDiv>
-                <BubblesDiv></BubblesDiv>
-                <BubblesDiv></BubblesDiv>
-                <BubblesDiv></BubblesDiv>
-                <BubblesDiv></BubblesDiv>
-                <BubblesDiv></BubblesDiv>
-                <BubblesDiv></BubblesDiv>
-                <BubblesDiv></BubblesDiv>
-                <BubblesDiv></BubblesDiv>
-                <BubblesDiv></BubblesDiv>
-                <BubblesDiv></BubblesDiv>
-
-                <BorderDiv></BorderDiv>
-                <BorderDiv></BorderDiv>
-
-                {/* https://www.youtube.com/watch?v=AKPNKn4Co2A */}
-            </ContainerDiv>
+            <ImageContainer>
+                <img src={me}></img>
+            </ImageContainer>
         </StyledDiv>
     )
 }

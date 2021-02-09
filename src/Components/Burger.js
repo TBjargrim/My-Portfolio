@@ -5,7 +5,7 @@ import { bool, func } from 'prop-types';
 const StyledBurger = styled.button`
 
   position: absolute;
-  top: 45%;
+  top: 40%;
   left: 3%;
   display: flex;
   flex-direction: column;
@@ -33,6 +33,11 @@ const StyledBurger = styled.button`
     position: relative;
     transform-origin: 1px;
     background-color:white;
+  }
+
+  @media (max-width: ${({ theme }) => theme.mobile}) {
+    position:absolute;
+    top:3%;
   }
 `;
 
