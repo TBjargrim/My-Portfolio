@@ -8,11 +8,11 @@ import Menu from './Components/Menu';
 
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import { createGlobalStyle } from 'styled-components';
-import styled from 'styled-components';
 
 // Themeprovider is a wrapping compunent, uses the Context API to make our theme varibles available to the whole component tree
 import { ThemeProvider } from 'styled-components';
 import { theme } from './Styles/theme';
+import { AnimatePresence } from 'framer-motion';
 
 
 
@@ -53,10 +53,12 @@ const useOnClickOutside = (ref, handler) => {
 
 
 function App() {
+  const [name, setName] = useState();
   const [open, setOpen] = useState(false);
   const node = useRef();
-  const [name, setName] = useState();
+  // const location = useLocation();
   useOnClickOutside(node, () => setOpen(false));
+
 
 
   return (
@@ -68,12 +70,15 @@ function App() {
           <Burger open={open} setOpen={setOpen}/>
           <Menu open={open} setOpen={setOpen}/>
           </div>
-        <Switch>
+      <AnimatePresence exitBeforeEnter>
+            <Switch>
+              {/* location={location} key={location.pathname} */}
           <Route path='/about'> <About /> </Route>
           <Route path='/projects'> <Projects /> </Route>
           <Route path='/contact'> <Contact name={name} setName={setName} /> </Route>
           <Route path='/'> <Home /> </Route>
         </Switch>
+          </AnimatePresence>
         </div>
       </Router>
     </ThemeProvider >

@@ -2,10 +2,10 @@
 import github from './Images/github.png'
 import linkedin from './Images/linkedin.jpg'
 import email from './Images/email.png'
-// import { motion } from "framer-motion";
-
+import AnimationStyle from './AnimationStyle';
 import styled from 'styled-components';
-
+import { motion } from 'framer-motion';
+import { pageVariants, pageTransition } from '../Styles/FMStyles';
 
 
 const StyledDiv = styled.div`
@@ -14,7 +14,7 @@ width:100%;
 height:100vh;
 color:white;
 position:relative;
-
+overflow:hidden;
 h2{
     font-family: 'Roboto', sans-serif;
     color:white;
@@ -47,10 +47,12 @@ left:15%;
     @media (max-width: ${({ theme }) => theme.mobile}) {
     left:2%;
     margin:0;
+     top:55%;
     }
     @media (max-width: ${({ theme }) => theme.smallScreen}) {
-    left:0%;
+    left:2%;
     margin:0;
+    top:60%;
   }
 
 `
@@ -66,8 +68,8 @@ h5{
     line-height: 40px;
     margin-top:10px;
     @media (max-width: ${({ theme }) => theme.smallScreen}) {
-font-size:15px;
-  }
+    font-size:15px;
+    }
 }
 a{
     margin-left:25px;
@@ -93,9 +95,11 @@ const LinesDiv=styled.div`
     left:16%;
     width:45%;
         @media (max-width: ${({ theme }) => theme.mobile}) {
+           
     left:5%;
   }
   @media (max-width: ${({ theme }) => theme.smallScreen}) {
+       top:45%;
     left:2%;
   }
     `
@@ -120,23 +124,31 @@ function Contact() {
     return (
         <div>
             <StyledDiv>
-                <h2>Get in touch</h2>
+                <AnimationStyle />
+                <motion.h2
+                    initial="out"
+                    animate="in"
+                    exit="out"
+                    variants={pageVariants}
+                    transition={pageTransition}>Get in touch
+                </motion.h2>
                 <LinesDiv>
                 <DivOne></DivOne>
                 <DivTwo></DivTwo>
                 </LinesDiv>
                 <ContactText>
                     <StyledSection>
-                        <section><img src={email} alt="image of an envelope" /></section>
-                        <h5><a href="mailto:t.bjargrim@gmail.com" target="_blank">t.bjargrim@gmail.com</a> </h5>
+                        <section><img src={email} alt="an envelope" /></section>
+                        <h5><a href="mailto:t.bjargrim@gmail.com" target="_blank"
+                            rel="noreferrer">t.bjargrim@gmail.com</a> </h5>
                     </StyledSection>
                     <StyledSection>
                         <section><img src={github} alt="github logo" /></section>
-                        <h5><a href="https://github.com/tbjargrim" target="_blank">View my github</a></h5>
+                        <h5><a href="https://github.com/tbjargrim" target="_blank" rel="noreferrer">View my github</a></h5>
                     </StyledSection>
                     <StyledSection>
                         <section><img src={linkedin} alt="linkedins logo" /></section>
-                        <h5><a href="http://www.linkedin.com/in/tbjargrim" target="_blank">LinkedIn</a></h5>
+                        <h5><a href="http://www.linkedin.com/in/tbjargrim" target="_blank" rel="noreferrer">LinkedIn</a></h5>
                     </StyledSection>
                 </ContactText>
             </StyledDiv>

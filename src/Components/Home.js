@@ -1,237 +1,185 @@
 import styled from 'styled-components';
+import { motion } from 'framer-motion';
+import { pageVariants, pageTransition } from '../Styles/FMStyles';
 
-const StyledDiv = styled.div`
+const StyledDiv = styled(motion.div)`
     background-color:black;
     height: 100vh;
     width:100%;
+    overflow:hidden;
+
 `
 const BoxDiv = styled.div`
-    width:700px;
-    height:250px;
+    width:900px;
+    height:200px;
     flex-direction:column;
     position: relative;
     display: flex;
     top:35%;
     left:10%;
     z-index:1;
+    background-color:rgba(0, 0, 0, 0.5);
+                    @media (max-width: ${({ theme }) => theme.mobile}) {
+      top:15%;
+                }
     `
-// const ImgDiv = styled.div`
-// height:400px;
-// width:300px;
-// position:absolute;
-// top:30%;
-// right:15%;
-// img {
-//     width: 100%;
-//     height: auto;
-//     animation: fadeIn ease 10s;
-// }
-// @keyframes fadeIn {
-// 0% {opacity:0;}
-// 100% {opacity:1;}
-// }
-// `
-
-
 const NameDiv = styled.div`
       width: 100%;
-      /* position: relative; */
       display: flex;
       align-items: center;
       height: 50px;
+      background-color:rgba(0, 0, 0, 0.5);
 
 h4 {
-        /* font-family: 'Poppins'; */
-        color: #fff;
+        color: ${({ theme })=>theme.primaryLightPurple};
         font-size: 28px;
-        /* animation: mainFadeIn 2s forwards; */
-        animation-delay: 1.6s;
-        /* opacity: 0; */
         display: flex;
         padding-right:15px;
         position: relative;
         letter-spacing:2px;
+        background-color:rgba(0, 0, 0, 0.5);
 }
-/* @keyframes mainFadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-} */
 `
-const FirstSpan = styled.span`
-        width: 0%;
-        height: inherit;
-        background: #221336;
-        position: absolute;
-        /* animation: mainBlock 2s cubic-bezier(.74, .06, .4, .92) forwards; */
-        display: flex;
-/* 
-@keyframes mainBlock {
-  0% {
-    width: 0%;
-    left: 0;
-
-  }
-  50% {
-    width: 100%;
-    left: 0;
-
-  }
-  100% {
-    width: 0;
-    left: 100%;
-  }
-} */
-`
-const SecondSpan = styled.span`
-          width:0px;
-          height: 0px;
-          border-radius: 50%;
-
-          background: #553555;
-          /* animation: popIn 0.8s cubic-bezier(.74, .06, .4, .92) forwards; */
-          animation-delay: 2s;
-          /* margin-left: 5px; */
-          margin-top: -10px;
-          position: absolute;
-          bottom: 13px;
-          right: -12px;
-
-/* @keyframes popIn {
-  0% {
-    width: 0px;
-    height: 0px;
-    background: #553555;
-    border: 0px solid #ddd;
-    opacity: 0;
-  }
-  50% {
-    width: 10px;
-    height: 10px;
-    background: #553555;
-    opacity: 1;
-    bottom: 45px;
-  }
-   65% {
-      width: 7px;
-    height: 7px;
-      bottom: 0px;
-      width: 15px
-   }
-   80% {
-      width: 10px;
-    height: 10px;
-      bottom: 20px
-   }
-  100% {
-    width: 7px;
-    height: 7px;
-    background: #553555;
-    border: 0px solid #222;
-    bottom: 13px;
-
-  }
-} */
-`
-
 const TitleDiv = styled.div`
-      width: 100%;
+
+      width:100%;
       position: relative;
       display: flex;
       height: 150px;
       margin-top: -10px;
-        flex-direction:column;
+      flex-direction:column;
+      background-color:rgba(0, 0, 0, 0.5);
    
-
-/* div {
-        width: 0%;
-        height: inherit;
-        background: #755b69;
-        position: absolute;
-        animation: secBlock 2s cubic-bezier(.74, .06, .4, .92) forwards;
-        animation-delay: 2s;
-        display: flex;
-       
-} */
       h1 {
-        /* animation: secFadeIn 2s forwards; */
-        animation-delay: 3.2s;
-        /* opacity: 0; */
         font-weight: 800;
         color: #fff;
-        /* color: #ffffff; */
-        font-size: 38px;
+        font-size: 60px;
         text-transform: uppercase;
         margin-top:20px;
         letter-spacing: 5px;
+        background-color:rgba(0, 0, 0, 0.5);
+                @media (max-width: ${({ theme }) => theme.mobile}) {
+                    max-width:100px;
+                    font-size:40px;
+                }
       }
-            h4 {
-        /* animation: secFadeIn 2s forwards; */
-        animation-delay: 3.2s;
-        /* opacity: 0; */
+      h4 {
          font-weight: 600;
-        /* font-family: 'Lato'; */
-        /* color: #ffffff; */
-        /* color:#96C5B0; */
-         color: #fff;
-        font-size: 12px;
+         color:${({ theme }) => theme.primaryGreen};
+        font-size: 16px;
         text-transform: uppercase;
         margin-top:30px;
         letter-spacing: 5px;
+        background-color:rgba(0, 0, 0, 0.5);
+                @media (max-width: ${({ theme }) => theme.mobile}) {
+                    max-width:100px;
+                    font-size:12px;
+                    line-height:25px;
+                }
       }
-/* @keyframes secBlock {
-  0% {
-    width: 0%;
-    left: 0;
 
-  }
-  50% {
-    width: 100%;
-    left: 0;
 
-  }
-  100% {
-    width: 0;
-    left: 100%;
-  }
-}
-
-@keyframes secFadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    /* opacity: 0.5; */
-    /* opacity: 1;
-  } */
-
+      `
+const Circels =styled.div`
+display:flex;
+justify-content:center;
+align-items:center;
+padding:2rem;
+position:relative;
+width:50%;
+left:50%;
+            @media (max-width: ${({ theme }) => theme.mobile}) {
+                padding:0;
+                top:5%;
+                }
 `
+const CircelOne=styled(motion.div)`
+position:absolute;
+height:160px;
+width:160px;
+background-color:${({ theme }) => theme.primaryPurple};
+border-radius:60%;
+top:10px;
+left:10px;
+`
+const CircelTwo = styled(motion.div)`
+position:absolute;
+height:150px;
+width:150px;
+background-color:${({ theme }) => theme.primaryLightPurple};
+border-radius:50%;
+top:170px;
+nav-right:10px;
+`
+const CircelThree=styled(motion.div)`
+position:absolute;
+height:170px;
+width:170px;
+background-color:${({ theme }) => theme.primaryLightGreen};
+border-radius:50%;
+top:350px;
+left:50px;`
+
+const CircelFour=styled(motion.div)`
+position:absolute;
+height:130px;
+width:130px;
+background-color:${({ theme }) => theme.primaryGreen};
+border-radius:50%;
+bottom:100px;
+right:75px;`
 
 function Home() {
     return (
-        <StyledDiv>
+
+        <StyledDiv  
+        initial="out"
+        animate="in"
+        exit="out"
+        variants={pageVariants}
+        transition={pageTransition}>
             <BoxDiv>
                 <NameDiv>
-                    {/* <FirstSpan></FirstSpan> */}
-            {/* <SecondSpan></SecondSpan> */}
-            <h4>Hi, Im Tess  </h4>
+                    <h4>Hi, I´m Tess</h4>
                 </NameDiv>
                 <TitleDiv>
-                    {/* <div></div> */}
                     <h1>Front-End Developer</h1>
                     <h4>Student @ KYH, Stockholm, Sweden</h4>
                 </TitleDiv>
             </BoxDiv>
-{/* https://codepen.io/KaioRocha/pen/YoEVvZ */}
-
-            {/* <ImgDiv>
-                <img src="https://images.unsplash.com/photo-1541519481457-763224276691?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"></img>
-            </ImgDiv> */}
-        </StyledDiv>
-
+        
+            <Circels>
+                <CircelOne
+                whileTap={{scale:0.9}}
+                drag={true}
+                dragConstraints={{left:0, right:250,top:0,bottom:50}}
+                initial={{opacity:0, y:-100}}
+                animate={{opacity:1, y:0, transition:{duration:1}}}
+                ></CircelOne>
+                <CircelTwo
+                whileTap={{scale:0.6}}
+                drag={true}
+                dragConstraints={{left:50, right:0,top:0,bottom:50}}
+                    initial={{ opacity: 0, x: 100 }}
+                    animate={{ opacity: 1, x: 0, transition: { duration: 1 } }}
+                ></CircelTwo>
+                <CircelThree
+                whileTap={{scale:0.8}}
+                drag={true}
+                dragConstraints={{left:0, right:250,top:0,bottom:50}}
+                    initial={{ opacity: 0, x: -100 }}
+                    animate={{ opacity: 1, x: 0, transition: { duration: 1 } }}
+                ></CircelThree>
+                <CircelFour
+                whileTap={{scale:0.9}}
+                drag={true}
+                dragConstraints={{left:0, right:0,top:0,bottom:50}}
+                    initial={{ opacity: 0, x: -100 }}
+                    animate={{ opacity: 1, x: 0, transition: { duration: 1 } }}
+                ></CircelFour>
+            </Circels>
+      
+            </StyledDiv>
     )
 }
 

@@ -1,4 +1,4 @@
-import { SharedLayoutContext } from "framer-motion";
+
 import React, { Component } from "react";
 import styled from 'styled-components'
 const APIDaylie = 'https://api.openweathermap.org/data/2.5/onecall?lat=59.334591&lon=18.063240&appid=1a2363f2dc8b80e9b8b8781b3756e20e&units=metric';
@@ -24,6 +24,7 @@ h6{
     align-items:flex-start;
   }
 
+
 `
 const SectionDay=styled.div`
 display:flex;
@@ -32,10 +33,8 @@ display:relative;
 margin:50px 0px;
     @media (max-width: ${({ theme }) => theme.mobile}) {
     left:0;
-    
-
+    flex-wrap:wrap;
   }
-
 `
 const StyledDiv =styled.div`
 display:flex;
@@ -61,6 +60,7 @@ h5{
     @media (max-width: ${({ theme }) => theme.smallScreen}) {
     margin-left:0;
     padding-right:15px;
+    margin-top:15px;
 
   }
 `
@@ -98,7 +98,7 @@ class WeatherAPI extends Component {
             myArr.push(
                 <StyledDiv key={i}>
                     <h3>{date} {months[month]}</h3>
-                    <img src={`http://openweathermap.org/img/w/${icon}.png`} />
+                    <img alt="icon of the weather"src={`http://openweathermap.org/img/w/${icon}.png`} />
                     <h3>{weekdays[day]}</h3>
                     <h5>{minTemp} / {maxTemp}</h5>
                 </StyledDiv>)

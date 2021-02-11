@@ -10,10 +10,13 @@ left:12%;
 
     @media (max-width: ${({ theme }) => theme.mobile}) {
 top:20%;
+left:2%;
+margin:0;
  
   }
     @media (max-width: ${({ theme }) => theme.smallScreen}) {
-left:5%;
+left:0%;
+margin-left:0;
 
   }
 }
@@ -21,11 +24,12 @@ left:5%;
 
 export const Row =styled.div`
 display:flex;
+
 /* border:1px solid red; */
-margin:10px;
+margin:40px;
     @media (max-width: ${({ theme }) => theme.mobile}) {
     flex-direction:column;
-    max-width:70%;
+    max-width:50%;
     margin-bottom:20px;
  
   }

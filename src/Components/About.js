@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import me from './Images/me.png'
-// ${ ({ Background }) => Background.mobile }
+import { motion } from 'framer-motion';
+import { pageVariants, pageTransition } from '../Styles/FMStyles';
 
 
 const StyledDiv = styled.div`
@@ -94,7 +95,6 @@ img {
   }
   @media (max-width: ${({ theme }) => theme.smallScreen}){
       display:none;
-
   }
 `
 
@@ -103,7 +103,12 @@ function About() {
 
     return (
         <StyledDiv>
-            <h2>About</h2>
+            <motion.h2
+                initial="out"
+                animate="in"
+                exit="out"
+                variants={pageVariants}
+                transition={pageTransition}>About</motion.h2>
             <StyledSection>
                 <h4>Front End</h4>
                 {/* <h5> HTML / CSS / JAVASCRIPT / REACT </h5> */}
@@ -113,7 +118,7 @@ function About() {
             and my goal is to work with a variety of clients and on many diverse projects.</h5>
             </StyledSection>
             <ImageContainer>
-                <img src={me}></img>
+                <img src={me} alt="Therese"></img>
             </ImageContainer>
         </StyledDiv>
     )

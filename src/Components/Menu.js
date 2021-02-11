@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from "react-router-dom";
-import { bool } from 'prop-types'; //Check, what is this?
+import { bool } from 'prop-types';
 
 const StyledMenu = styled.nav`
 background-color:white;
@@ -18,9 +18,13 @@ background-color:white;
   transition: transform 0.3s ease-in-out;
   transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(-100%)'};
   z-index:10;
-   
+   overflow:hidden;
   @media (max-width: ${({ theme }) => theme.mobile}) {
-    width: 100%;
+    width: 50%;
+  }
+  @media (max-width: ${({ theme }) => theme.smallScreen}) {
+    width: 60%;
+
   }
 
 ul {
@@ -42,21 +46,23 @@ li{
     line-height:100px;
   background-color:white;
     
-    @media (max-width: ${({ theme }) => theme.mobile}) {
-      font-size: 1rem;
+    @media (max-width: ${({ theme }) => theme.smallScreen}) {
+      font-size: 0.5rem;
       text-align: center;
+
     }
 
     &:hover {
-      color: #96c5b0;
+      color: ${({ theme }) => theme.primaryGreen};
       font-family: 'Monoton';
       letter-spacing: 0.7rem;
     }
   }
 `;
+
 const Menu = ({open, setOpen}) => {
     return (
-      <StyledMenu open={open} onClick={() => setOpen(!open)} open={open} setOpen={setOpen}  >
+      <StyledMenu onClick={() => setOpen(!open)} open={open} setOpen={setOpen} >
             <ul>
                 <li>
                     <Link to='/'>Home</Link>
