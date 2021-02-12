@@ -59,7 +59,7 @@ const CircelM = styled.div`
   background: ${({ theme }) => theme.primaryGreen};
   animation: ${KeyFrames} 15s infinite;
   box-shadow: 0px 0px 1px 0px #508fb9;
-width: 400px;
+  width: 400px;
   height: 400px;
   left: -100px;
   bottom: -200px;

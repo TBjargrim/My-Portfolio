@@ -40,13 +40,13 @@ const StyledSection = styled.section`
     max-width:600px;
     line-height:50px;
     z-index:1;
-    background-color:rgba(0, 0, 0, 0.5);
+    background-color:rgba(0, 0, 0, 0.0);
 h4{
     font-size:48px;
     letter-spacing:6px;
     font-family: 'Roboto', sans-serif;
     margin-bottom:20px;
-    background-color:rgba(0, 0, 0, 0.5);
+    background-color:rgba(0, 0, 0, 0.0);
 }
 h5 {
     font-size:22px;
@@ -56,7 +56,7 @@ h5 {
     font-family: 'Roboto', sans-serif;
     letter-spacing: 1px;
     font-weight:200;
-    background-color:rgba(0, 0, 0, 0.5);
+    background-color:rgba(0, 0, 0, 0.0);
 }
     @media (max-width: ${({ theme }) => theme.mobile}) {
     left:5%;
@@ -111,7 +111,6 @@ function About() {
                 transition={pageTransition}>About</motion.h2>
             <StyledSection>
                 <h4>Front End</h4>
-                {/* <h5> HTML / CSS / JAVASCRIPT / REACT </h5> */}
                 <DivOne></DivOne>
                 <DivTwo></DivTwo>
                 <h5>I´m currently studing Front-End Development at KYH in Stockholm,

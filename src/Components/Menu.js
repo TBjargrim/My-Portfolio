@@ -33,6 +33,7 @@ ul {
 li{
   background-color:white;
   list-style:none;
+  background-color:rgba(0, 0, 0, 0.0);
 }
   a {
     font-size: 15px;
@@ -45,6 +46,7 @@ li{
     transition: color 0.3s linear;
     line-height:100px;
   background-color:white;
+  background-color:rgba(0, 0, 0, 0.0);
     
     @media (max-width: ${({ theme }) => theme.smallScreen}) {
       font-size: 0.5rem;

@@ -43,7 +43,8 @@ const StyledBurger = styled.button`
 
 function Burger({open, setOpen}) {
     return (
-        <StyledBurger onClick={() => setOpen(!open)} open={open} setOpen={setOpen}>
+      <StyledBurger aria-label="Burger menu" 
+      onClick={() => setOpen(!open)} open={open} setOpen={setOpen}>
             <div />
             <div />
             <div />

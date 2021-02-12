@@ -18,7 +18,7 @@ const BoxDiv = styled.div`
     top:35%;
     left:10%;
     z-index:1;
-    background-color:rgba(0, 0, 0, 0.5);
+    background-color:rgba(0, 0, 0, 0.0);
                     @media (max-width: ${({ theme }) => theme.mobile}) {
       top:15%;
                 }
@@ -28,7 +28,7 @@ const NameDiv = styled.div`
       display: flex;
       align-items: center;
       height: 50px;
-      background-color:rgba(0, 0, 0, 0.5);
+      background-color:rgba(0, 0, 0, 0.0);
 
 h4 {
         color: ${({ theme })=>theme.primaryLightPurple};
@@ -37,7 +37,7 @@ h4 {
         padding-right:15px;
         position: relative;
         letter-spacing:2px;
-        background-color:rgba(0, 0, 0, 0.5);
+        background-color:rgba(0, 0, 0, 0.0);
 }
 `
 const TitleDiv = styled.div`
@@ -48,7 +48,7 @@ const TitleDiv = styled.div`
       height: 150px;
       margin-top: -10px;
       flex-direction:column;
-      background-color:rgba(0, 0, 0, 0.5);
+      background-color:rgba(0, 0, 0, 0.0);
    
       h1 {
         font-weight: 800;
@@ -57,7 +57,7 @@ const TitleDiv = styled.div`
         text-transform: uppercase;
         margin-top:20px;
         letter-spacing: 5px;
-        background-color:rgba(0, 0, 0, 0.5);
+        background-color:rgba(0, 0, 0, 0.0);
                 @media (max-width: ${({ theme }) => theme.mobile}) {
                     max-width:100px;
                     font-size:40px;
@@ -70,7 +70,7 @@ const TitleDiv = styled.div`
         text-transform: uppercase;
         margin-top:30px;
         letter-spacing: 5px;
-        background-color:rgba(0, 0, 0, 0.5);
+        background-color:rgba(0, 0, 0, 0.0);
                 @media (max-width: ${({ theme }) => theme.mobile}) {
                     max-width:100px;
                     font-size:12px;

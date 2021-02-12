@@ -43,6 +43,7 @@ const ContactText = styled.div`
 position:absolute;
 top:50%;
 left:15%;
+ background-color:rgba(0, 0, 0, 0.0);
 
     @media (max-width: ${({ theme }) => theme.mobile}) {
     left:2%;
@@ -60,13 +61,14 @@ const StyledSection = styled.section`
   display:flex;
    left:14%;
    z-index:1;
-
+ background-color:rgba(0, 0, 0, 0.0);
 
 h5{
     font-size: 25px;
     letter-spacing: 3px;
     line-height: 40px;
     margin-top:10px;
+     background-color:rgba(0, 0, 0, 0.0);
     @media (max-width: ${({ theme }) => theme.smallScreen}) {
     font-size:15px;
     }
@@ -76,10 +78,12 @@ a{
 
     color:white;
     text-decoration: none;
+     background-color:rgba(0, 0, 0, 0.0);
 }
 section{
     width:50px;
     height:50px;
+     background-color:rgba(0, 0, 0, 0.0);
   }
 
 img {
