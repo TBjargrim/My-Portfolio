@@ -7,7 +7,6 @@ const StyledDiv = styled(motion.div)`
     height: 100vh;
     width:100%;
     overflow:hidden;
-
 `
 const BoxDiv = styled.div`
     width:900px;
@@ -77,9 +76,7 @@ const TitleDiv = styled.div`
                     line-height:25px;
                 }
       }
-
-
-      `
+`
 const Circels =styled.div`
 display:flex;
 justify-content:center;
@@ -118,7 +115,8 @@ width:170px;
 background-color:${({ theme }) => theme.primaryLightGreen};
 border-radius:50%;
 top:350px;
-left:50px;`
+left:50px;
+`
 
 const CircelFour=styled(motion.div)`
 position:absolute;
@@ -127,7 +125,8 @@ width:130px;
 background-color:${({ theme }) => theme.primaryGreen};
 border-radius:50%;
 bottom:100px;
-right:75px;`
+right:75px;
+`
 
 function Home() {
     return (

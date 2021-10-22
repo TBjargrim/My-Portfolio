@@ -44,7 +44,4 @@ margin-right:10px;
   }
 
 `;
-
-// col width = (row width / number of cols) * (flex value)
-
 // https://medium.com/swlh/create-a-responsive-grid-with-react-flexbox-styled-components-f7a55f607480

@@ -1,11 +1,11 @@
 
-import github from './Images/github.png'
-import linkedin from './Images/linkedin.jpg'
-import email from './Images/email.png'
-import AnimationStyle from './AnimationStyle';
-import styled from 'styled-components';
 import { motion } from 'framer-motion';
-import { pageVariants, pageTransition } from '../Styles/FMStyles';
+import styled from 'styled-components';
+import { pageTransition, pageVariants } from '../Styles/FMStyles';
+import AnimationStyle from './AnimationStyle';
+import email from './Images/email.png';
+import github from './Images/github.png';
+import linkedin from './Images/linkedin.jpg';
 
 
 const StyledDiv = styled.div`

@@ -29,7 +29,7 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; */
-    height: 100vh;
+    /* height: 100vh; */
 
   }
 `
